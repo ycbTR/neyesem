@@ -1,0 +1,21 @@
+<%= form_for(@mekan) do |f| %>
+  <% if @mekan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mekan.errors.count, "error") %> prohibited this mekan from being saved:</h2>
+
+      <ul>
+      <% @mekan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :isim %><br />
+    <%= f.text_field :isim %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
